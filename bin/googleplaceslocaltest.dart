@@ -1,13 +1,16 @@
-import 'dart:io';
-
 import 'classes/run_test.dart';
+import 'classes/user_input.dart';
+import 'classes/opening_screen.dart';
 
 Future<void> main(List<String> arguments) async {
-  RunTest run = RunTest();
+  SplashScreen.getSplashScreen();
+
+  UserInput input = UserInput();
+  input.getUserInput();
+  
+  RunTest run = RunTest(input.keyInput, input.queryInput);
 
   run.getXMLData().toString();
 
   run.getJSONData().toString();
-
-  
 }

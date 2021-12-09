@@ -3,16 +3,23 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 class RunTest {
-  var urlXML = Uri.parse(
-      "https://maps.googleapis.com/maps/api/place/textsearch/xml?query=walmart&key=AIzaSyAnoLJ8R2z03nivbtkwoEXd03Tj8W_o1zk");
+  String key = "";
+  String queryText = "";
 
-  var urlJSON = Uri.parse(
-      "https://maps.googleapis.com/maps/api/place/textsearch/json?query=walmart&key=AIzaSyAnoLJ8R2z03nivbtkwoEXd03Tj8W_o1zk");
+  
+
+
 
   // ignore: prefer_typing_uninitialized_variables
   var dataResponse;
 
+  RunTest(this.key, this.queryText);
+
   Future<void> getXMLData() async {
+
+    var urlXML = Uri.parse(
+      "https://maps.googleapis.com/maps/api/place/textsearch/xml?query=$queryText&key=$key");
+
     dataResponse = await http.get(urlXML);
     print("*****Printing XML data*****");
     print(dataResponse.body);
@@ -20,6 +27,10 @@ class RunTest {
   }
 
   Future<void> getJSONData() async {
+
+    var urlJSON = Uri.parse(
+      "https://maps.googleapis.com/maps/api/place/textsearch/json?query=$queryText&key=$key");
+
     dataResponse = await http.get(urlJSON);
     print("*****Printing JSON data*****");
     print(dataResponse.body);
