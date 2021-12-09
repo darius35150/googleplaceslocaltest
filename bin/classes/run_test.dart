@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:http/http.dart' as http;
 
 class RunTest {
@@ -22,5 +24,7 @@ class RunTest {
     print("*****Printing JSON data*****");
     print(dataResponse.body);
     print("*****Printing of JSON data completed!!!*****");
+
+    sleep(const Duration(minutes: 5));
   }
 }
