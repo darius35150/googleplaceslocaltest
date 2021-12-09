@@ -17,7 +17,7 @@ class SplashScreen {
     stdout.writeln('Built using the following technologies: \n' +
         'Prog. Language:   Dart\n' +
         'Dev enviro:       VS Code and Android Studio\n' +
-        'API:              Open Weather API\n' +
+        'API:              Google Places API\n' +
         'Developer:        Darius Holley\n\n');
     
     sleep(const Duration(seconds: 4));
