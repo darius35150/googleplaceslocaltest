@@ -7,10 +7,10 @@ Future<void> main(List<String> arguments) async {
 
   UserInput input = UserInput();
   input.getUserInput();
-  
+
   RunTest run = RunTest(input.keyInput, input.queryInput);
 
-  run.getXMLData().toString();
+  await run.getXMLData();
 
-  run.getJSONData().toString();
+  await run.getJSONData();
 }
